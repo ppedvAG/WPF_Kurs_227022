@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grundlagen", "Grundlagen\Grundlagen.csproj", "{7BD5E4F5-9940-42FC-B24B-A0F2D148ED6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M01_Grundlagen", "Grundlagen\M01_Grundlagen.csproj", "{7BD5E4F5-9940-42FC-B24B-A0F2D148ED6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls", "Controls\Controls.csproj", "{C9931216-E1A5-49B8-9804-6DC8178A0C3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M02_Controls", "Controls\M02_Controls.csproj", "{C9931216-E1A5-49B8-9804-6DC8178A0C3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personendatenbank", "Personendatenbank\Personendatenbank.csproj", "{91FC64C4-8243-45CA-82D7-D89C79F6FAA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Layouts", "Layouts\Layouts.csproj", "{F07F7BC5-890B-4167-8A5F-6A4930A2980E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{C9931216-E1A5-49B8-9804-6DC8178A0C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9931216-E1A5-49B8-9804-6DC8178A0C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9931216-E1A5-49B8-9804-6DC8178A0C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91FC64C4-8243-45CA-82D7-D89C79F6FAA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91FC64C4-8243-45CA-82D7-D89C79F6FAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91FC64C4-8243-45CA-82D7-D89C79F6FAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91FC64C4-8243-45CA-82D7-D89C79F6FAA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F07F7BC5-890B-4167-8A5F-6A4930A2980E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F07F7BC5-890B-4167-8A5F-6A4930A2980E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F07F7BC5-890B-4167-8A5F-6A4930A2980E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F07F7BC5-890B-4167-8A5F-6A4930A2980E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

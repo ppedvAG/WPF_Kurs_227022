@@ -1,0 +1,32 @@
+﻿<Window x:Class="DataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBinding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="440" Width="245">
+    <StackPanel>
+
+        <StackPanel x:Name="Spl_DataContextBsp" Margin="10">
+            <StackPanel.DataContext>
+                <local:Person Vorname="Anna" Nachname="Nass"/>
+            </StackPanel.DataContext>
+
+            <TextBox Text="{Binding Path=Vorname}"/>
+            <TextBlock Text="{Binding Nachname}"/>
+            <TextBox Text="{Binding Alter}"/>
+            <TextBlock Text="{Binding WichtigeTage[1].DayOfWeek}"/>
+            <TextBlock Text="{Binding LetzterTag, IsAsync=True}"/>
+
+            <Button Content="Show" x:Name="Btn_Show" Click="Btn_Show_Click"/>
+            <Button Content="Altern" x:Name="Btn_Altern" Click="Btn_Altern_Click"/>
+
+        </StackPanel>
+
+        <ListBox x:Name="Lsb_Personen" Height="100"
+                 ItemsSource="{Binding Personenliste}"/>
+        <Button Content="Lösche Person" x:Name="Btn_Delete" Click="Btn_Delete_Click"/>
+        <Button Content="Neue Person" x:Name="Btn_Add" Click="Btn_Add_Click"/>
+    </StackPanel>
+</Window>

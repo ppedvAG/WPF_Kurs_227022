@@ -88,10 +88,14 @@
 
                 <!--In Grids müssen Spalten und Zeilen zunächst definiert werden, bevor die Elemente über Grid.Row
                     und Grid.Column einer Zelle zugeordnet werden.-->
-                <Grid Margin="2" Height="100" Grid.IsSharedSizeScope="True">
+                <Grid Margin="2" Height="100">
                     <!--In den GridDefinitions können Spalten und Zeilen Breite/Höhe zugewiesen werden.
                         Auto    = Minimaler Platz des gröten Elements der jeweiligen Spalte/Zeile
                         *       = verbleibender Platz-->
+                    <!--<Grid.Effect>
+                        <DropShadowEffect/>
+                    </Grid.Effect>-->
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100"/>
                         <ColumnDefinition Width="Auto"/>
@@ -112,7 +116,7 @@
 
                     <Button Content="Button" Grid.Column="1" Grid.Row="1" Margin="5">
                         <Button.Effect>
-                            <DropShadowEffect BlurRadius="10" Color="Black" Direction="300" ShadowDepth="5" Opacity="0.7"/>
+                            <DropShadowEffect BlurRadius="10" Color="Black" Direction="300" ShadowDepth="10" Opacity="0.7"/>
                         </Button.Effect>
                     </Button>
 

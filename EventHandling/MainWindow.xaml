@@ -1,0 +1,33 @@
+﻿<Window x:Class="EventHandling.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventHandling"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="380" Width="598"
+        ButtonBase.Click="Window_Click"
+        x:Name="Wnd_Main">
+    <StackPanel Background="Aqua" x:Name="Aqua"
+                PreviewMouseDown="SP_PreviewMouseDown"
+                MouseDown="SP_MouseDown">
+        <StackPanel Background="Green" x:Name="Green" Margin="20"
+                PreviewMouseDown="SP_PreviewMouseDown"
+                MouseDown="SP_MouseDown">
+            <StackPanel Background="Yellow" x:Name="Yellow" Margin="20"
+                PreviewMouseDown="SP_PreviewMouseDown"
+                MouseDown="SP_MouseDown">
+                <StackPanel Background="Red" x:Name="Red" Margin="20"
+                PreviewMouseDown="SP_PreviewMouseDown"
+                MouseDown="SP_MouseDown">
+                    <Button Content="Klick Mich" x:Name="Btn_KlickMich" 
+                            Click="Btn_KlickMich_Click" Margin="20"/>
+                    <Button Content="Auch ein Button" Margin="20"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+
+        <TextBlock x:Name="Tbl_Output" Background="White" Height="200"/>
+    </StackPanel>
+</Window>

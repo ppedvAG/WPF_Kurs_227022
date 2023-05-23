@@ -1,0 +1,62 @@
+﻿<Window x:Class="Resources_Styles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Resources_Styles"
+        xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="310" Width="268">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="Scb_Button" Color="LightGreen"/>
+        <sys:Double x:Key="Dbl_GlobalFontSize">25.0</sys:Double>
+    </Window.Resources>
+
+
+    <StackPanel x:Name="Spl_Resources">
+        <StackPanel.Resources>
+            <SolidColorBrush x:Key="Scb_Button" Color="Green"/>
+        </StackPanel.Resources>
+
+        <Button Content="{StaticResource StringAusDict}"
+                Background="{StaticResource Scb_Button}"
+                FontSize="{StaticResource Dbl_GlobalFontSize}"
+                Click="Button_Click"/>
+        <Button Content="{x:Static local:Resource1.meinButtonString}"
+                Background="{DynamicResource Scb_Button}"/>
+
+
+        <StackPanel x:Name="Spl_Styles" Margin="10">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="Orange"/>
+                    <Setter Property="FontSize" Value="{StaticResource Dbl_GlobalFontSize}"/>
+                    <Setter Property="FontFamily"  Value="Comic Sans MS"/>
+                </Style>
+                <Style x:Key="Sty_Btn_01" TargetType="Button">
+                    <Setter Property="Background" Value="LightSeaGreen"/>
+                    <Setter Property="FontSize" Value="15"/>
+                </Style>
+                <Style x:Key="Sty_Btn_02" TargetType="Button" BasedOn="{StaticResource Sty_Btn_01}">
+                    <Setter Property="FontStyle" Value="Italic"/>
+                </Style>
+                <Style  x:Key="Sty_Btn_03" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Setter Property="FontStyle" Value="Italic"/>
+                </Style>
+            </StackPanel.Resources>
+
+
+            <Button Content="Btn1"/>
+            <Button Content="Btn2" Style="{StaticResource Sty_Btn_01}"/>
+            <Button Content="Btn3" Style="{StaticResource Sty_Btn_02}"/>
+            <Button Content="Btn4" Style="{StaticResource Sty_Btn_03}"/>
+
+        </StackPanel>
+
+
+        <Button Content="LUNA"/>
+
+    </StackPanel>
+
+</Window>

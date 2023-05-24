@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UserControls;
 
 namespace Trigger
 {
@@ -40,10 +41,11 @@ namespace Trigger
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(BoolVal)));   
         }
 
+        //EventHandler des UserControls (vgl. M11_UserControls)
         private void colorpicker_PickedColorChanged(object sender, RoutedPropertyChangedEventArgs<SolidColorBrush> e)
         {
-            if ((e.NewValue as SolidColorBrush).Color.R == 255)
-                MessageBox.Show("Test bestanden");
+            if ((sender as ColorPicker).PickedColor.ToString().Equals("#FF000000"))
+                MessageBox.Show("Alles ist schwarz");
         }
     }
 }

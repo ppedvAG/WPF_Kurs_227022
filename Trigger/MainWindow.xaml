@@ -74,6 +74,9 @@
         <Button x:Name="Btn_Ändern" Content="Ändere BoolVal" Click="Button_Click"/>
         <TextBox x:Name="Tbx_Test"/>
 
+        <Separator Margin="5"/>
+
+        <!--Beispiel-Einbindung des UserControls aus M11_UserControls-->
 
         <usercontrols:ColorPicker x:Name="colorpicker" ShowRectangle="True" PickedColorChanged="colorpicker_PickedColorChanged"/>
 

@@ -7,6 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              x:Name="colorpicker">
+   
+    <!--UserControls werden verwendet um eigene Control-Elemente zu erstellen und zu versiegeln, so dass der Benutzer die Properties
+    der Teilelemente nicht mehr direkt verwendet kann. Vgl. CodeBehind-->
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -79,9 +82,7 @@
                 </Binding>
             </Border.Visibility>
 
-            <Rectangle x:Name="Rct_Output" Width="100" Height="100">
-
-              
+            <Rectangle x:Name="Rct_Output" Width="100" Height="100">              
                 
                 <Rectangle.Fill>
                     <MultiBinding>
@@ -100,3 +101,5 @@
         </Border>
     </Grid>
 </UserControl>
+
+<!--Beispiel-Einbindung in M10_Trigger-->

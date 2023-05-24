@@ -24,51 +24,67 @@ namespace UserControls
         {
             InitializeComponent();
 
+            //Erstellen einer neuen Bindung (Fill-Eigenschaft des Rechtecks an PickedColor-Eigenschaft)
+            //Initialisierung mit Übergabe der zu bindenden Quell-Eigenschaft
             Binding binding = new Binding("Fill");
+            //Setzen des Quell-Objekts
             binding.Source = Rct_Output;
-
+            //Setzen des Bindings-Modes
             binding.Mode = BindingMode.OneWay;
 
+            //Erstellen der Bindung mit Übergabe des Ziel-Objekts, der Ziel-Eigenschaft und des Bindungs-Elements
             BindingOperations.SetBinding(this, PickedColorProperty, binding);
         }
 
 
+        //Damit der Control eine Ausgabe hat, an welche die User andere Properties binden können muss für jede dieser Ausgaben eine DependencyProperty
+        //erstellt werden, welche im Konstruktor des UserControlls manuell an die entsprechnende Property eines Teilelements gebunden wird.
+        //DependencyProperties sind spezielle WPF-Element-Properties, welche nicht in den Objekten selbst gespeichert werden. Stattdessen werden diese
+        //in einer eigenen Liste abgelegt. Durch diese Mechanik werden Bindungen und Co in WPF erst möglich.
 
+        //Getter/Setter der DependencyProperty
         public SolidColorBrush PickedColor
         {
             get { return (SolidColorBrush)GetValue(PickedColorProperty); }
             set { SetValue(PickedColorProperty, value); }
         }
-
-        // Using a DependencyProperty as the backing store for PickedColor.  This enables animation, styling, binding, etc...
+        //Registrierung für neue Bindungen an der DependencyProperty
         public static readonly DependencyProperty PickedColorProperty =
-            DependencyProperty.Register("PickedColor", typeof(SolidColorBrush), typeof(ColorPicker), 
-                new PropertyMetadata(new SolidColorBrush(), (s,e)=>(s as UIElement)?.RaiseEvent(new RoutedPropertyChangedEventArgs<SolidColorBrush>(e.OldValue as SolidColorBrush, e.NewValue as SolidColorBrush, PickedColorChangedEvent))));
+            DependencyProperty.Register
+            (
+                "PickedColor",
+                typeof(SolidColorBrush),
+                typeof(ColorPicker),
+                new PropertyMetadata
+                (
+                    //Standartwert der DP
+                    default(SolidColorBrush),
+                    //Methode, welche nach der Wertveränderung aufgerufen wird (PropertyChangedCallback), hier wird das PropertyChangedEvent ausgelöst
+                    (s, e) => (s as UIElement)?.RaiseEvent(new RoutedPropertyChangedEventArgs<SolidColorBrush>(e.OldValue as SolidColorBrush, e.NewValue as SolidColorBrush, PickedColorChangedEvent))
+                )
+            );
 
-
-
-
-
-        public bool ShowRectangle
-        {
-            get { return (bool)GetValue(ShowRectangleProperty); }
-            set { SetValue(ShowRectangleProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for ShowRectangle.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ShowRectangleProperty =
-            DependencyProperty.Register("ShowRectangle", typeof(bool), typeof(ColorPicker), new PropertyMetadata(false));
-
-
-
+        //PickedColorChangedEvent
         public event RoutedPropertyChangedEventHandler<SolidColorBrush> PickedColorChanged
         {
             add { AddHandler(PickedColorChangedEvent, value); }
             remove { RemoveHandler(PickedColorChangedEvent, value); }
         }
 
-        public static readonly RoutedEvent PickedColorChangedEvent =
-            EventManager.RegisterRoutedEvent("PickedColorChanged", RoutingStrategy.Direct, typeof(RoutedPropertyChangedEventHandler<SolidColorBrush>), typeof(ColorPicker));
+        public static readonly RoutedEvent PickedColorChangedEvent = EventManager.RegisterRoutedEvent("PickedColorChanged", RoutingStrategy.Direct, typeof(RoutedPropertyChangedEventHandler<SolidColorBrush>), typeof(ColorPicker));
+
+
+        //ShowRectangleProperty
+        public Boolean ShowRectangle
+        {
+            get { return (Boolean)GetValue(ShowRectangleProperty); }
+            set { SetValue(ShowRectangleProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ShowRectangle.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ShowRectangleProperty =
+            DependencyProperty.Register("ShowRectangle", typeof(Boolean), typeof(ColorPicker), new PropertyMetadata((bool)false));
+
 
     }
 }

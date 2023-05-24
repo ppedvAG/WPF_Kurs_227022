@@ -1,0 +1,100 @@
+﻿<Window x:Class="Templates.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Templates"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="366" Width="252" Topmost="True">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderBrush="DeepSkyBlue" 
+                                BorderThickness="2"
+                                CornerRadius="50"
+                                Background="{TemplateBinding Background}"
+                                x:Name="Bdr_Btn">
+                            <StackPanel HorizontalAlignment="Center"
+                                              VerticalAlignment="Center">
+                                <ContentPresenter/>
+                                <TextBlock Text="{TemplateBinding Tag}"/>
+                            </StackPanel>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bdr_Btn" Property="Background" Value="Blue"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Bdr_Btn" Property="Background" Value="DarkBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background" Value="Aqua"/>
+        </Style>
+
+        <DataTemplate DataType="{x:Type local:Chef}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding Vorname}" Margin="2"/>
+                    <TextBlock Text="{Binding Nachname}" Margin="2"/>
+                    <TextBlock Text="{Binding Gehalt}" Margin="2"/>
+                    <Button Content="Löschen" x:Name="Btn_Delete" Click="Btn_Delete_Click" Tag="{Binding}"/>
+                </StackPanel>
+                
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type local:Person}">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding Vorname}" Margin="2"/>
+                    <TextBlock Text="{Binding Nachname}" Margin="2"/>
+                    <TextBlock Text="{Binding Alter, StringFormat='({0})'}" Margin="2"/>
+                    <Button Content="Löschen" x:Name="Btn_Delete" Click="Btn_Delete_Click" Tag="{Binding}"/>
+                </StackPanel>
+                <TextBlock Text="{Binding Geburtsdatum, StringFormat='dd.MM.yyyy'}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+
+    <StackPanel Margin="10">
+
+        <Button Content="Klick Mich"
+                Width="100"
+                Height="100"
+                Click="Button_Click"
+                Background="LightBlue"
+                Tag="Moin Moin"/>
+
+        <ListBox x:Name="Lsb_Person" Height="100" ItemsSource="{Binding Personenliste}"
+                 SelectedValuePath="Vorname">
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Text="{Binding Vorname}" Margin="2"/>
+                            <TextBlock Text="{Binding Nachname}" Margin="2"/>
+                            <TextBlock Text="{Binding Alter, StringFormat='({0})'}" Margin="2"/>
+                            <Button Content="Löschen" x:Name="Btn_Delete" Click="Btn_Delete_Click" Tag="{Binding}"/>
+                        </StackPanel>
+                        <TextBlock Text="{Binding Geburtsdatum, StringFormat='dd.MM.yyyy'}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+        </ListBox>
+
+        <Label Content="{Binding ElementName=Lsb_Person, Path=SelectedItem, TargetNullValue=NULL}"/>
+
+        <Label Content="{Binding ElementName=Lsb_Person, Path=SelectedIndex}"/>
+
+        <Label Content="{Binding ElementName=Lsb_Person, Path=SelectedValue}"/>
+
+    </StackPanel>
+
+</Window>

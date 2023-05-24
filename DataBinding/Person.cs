@@ -34,7 +34,7 @@ namespace DataBinding
 
         public DateTime LastObject
         {
-            get { return WichtigeTage.Last(); }
+            get { Thread.Sleep(3000); return WichtigeTage.Last(); }
         }
 
         //Methode zur GUI-Aktualisierung (muss aufgerufen werden, wenn die Oberfläche über eine Veränderung von 'LastObject' informiert werden soll

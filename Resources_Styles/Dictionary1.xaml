@@ -6,4 +6,4 @@
     Sie müssen in einem Resource-Feld angemeldet werden (vgl. App.xaml)-->
     <sys:String x:Key="StringAusDict">Klick Mich !!</sys:String>
 
-</ResourceDictionary> ceDictionary>
+</ResourceDictionary>

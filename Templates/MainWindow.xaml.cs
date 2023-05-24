@@ -43,6 +43,7 @@ namespace Templates
 
         private void Btn_Delete_Click(object sender, RoutedEventArgs e)
         {
+            //Löschen der Person, welche in dem Button-Tag liegt
             Personenliste.Remove((sender as Button).Tag as Person);
         }
     }

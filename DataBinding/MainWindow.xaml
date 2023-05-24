@@ -22,6 +22,7 @@
             <TextBlock Text="{Binding Nachname}"/>
             <TextBlock Text="{Binding Alter}"/>
             <TextBlock Text="{Binding WichtigeTage[0].Year}"/>
+            <TextBlock Text="{Binding LastObject, IsAsync=true}"/>
 
             <Button x:Name="Btn_Show" Content="Show" Click="Btn_Show_Click"/>
             <Button x:Name="Btn_Altern" Content="Altern" Click="Btn_Altern_Click"/>

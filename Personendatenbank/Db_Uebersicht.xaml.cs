@@ -8,6 +8,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -21,7 +22,43 @@ namespace Personendatenbank
         public ObservableCollection<Person> Personenliste { get; set; } = new ObservableCollection<Person>()
         {
             new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
-            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0}
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
+            new Person(){Vorname="Rainer", Nachname="Zufall", Geburtsdatum=new DateTime(1987, 5, 13), Verheiratet=true, Lieblingsfarbe=Colors.DarkSeaGreen, Geschlecht=Gender.Männlich, Kinder=2},
+            new Person(){Vorname="Anna", Nachname="Nass", Geburtsdatum=new DateTime(1974, 11, 29), Verheiratet=false, Lieblingsfarbe=Colors.LightBlue, Geschlecht=Gender.Weiblich, Kinder=0},
         };
 
         public Db_Uebersicht()
@@ -48,10 +85,14 @@ namespace Personendatenbank
         {
             PersonenDialog dialog = new PersonenDialog();
 
+            this.Effect = new BlurEffect();
+
             if (dialog.ShowDialog() == true)
             {
                 Personenliste.Add(dialog.DataContext as Person);
             }
+
+            this.Effect = null;
         }
 
         private void Btn_Aendern_Click(object sender, RoutedEventArgs e)

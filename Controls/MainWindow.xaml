@@ -106,6 +106,10 @@
         <Menu>
             <MenuItem Header="_Datei">
                 <MenuItem Header="Neu">
+                    <MenuItem.Icon>
+                        <Image Source="Images/ppedv.bmp"/>
+                    </MenuItem.Icon>
+                    
                     <MenuItem Header="_Neu" Click="Neu_Click"/>
                     <MenuItem Header="_Dialog" Click="Dialog_Click"/>
                 </MenuItem>

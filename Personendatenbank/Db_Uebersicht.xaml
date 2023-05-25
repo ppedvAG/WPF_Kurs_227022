@@ -19,7 +19,8 @@
             <MenuItem Header="Datei">
                 <MenuItem x:Name="Mei_Beenden"
                           Header="Beenden"
-                          Click="Mei_Beenden_Click"/>
+                          Click="Mei_Beenden_Click"
+                          Icon=""/>
             </MenuItem>
         </Menu>
 

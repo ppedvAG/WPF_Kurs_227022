@@ -23,6 +23,7 @@
             <TextBlock Text="{Binding Alter}"/>
             <TextBlock Text="{Binding WichtigeTage[0].Year}"/>
             <TextBlock Text="{Binding LastObject, IsAsync=true}"/>
+            <TextBlock Text="{Binding Dbl_Test}"/>
 
             <Button x:Name="Btn_Show" Content="Show" Click="Btn_Show_Click"/>
             <Button x:Name="Btn_Altern" Content="Altern" Click="Btn_Altern_Click"/>

@@ -27,6 +27,8 @@ namespace DataBinding
             }
         }
 
+        public double Dbl_Test { get; set; } = 198.456;
+
         public List<DateTime> WichtigeTage { get; set; } = new List<DateTime>()
         {
             new DateTime(2003, 12, 3)

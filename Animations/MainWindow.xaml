@@ -7,8 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="527" Width="586">
     <Window.Resources>
-        <Storyboard x:Key="Storyboard1">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="textBlock" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+        <!--Mit dem BLEND-Designer erstelltes Storyboard-->
+        <Storyboard x:Key="BlendStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="button" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                <!--Mittels Keyframes können bestimmte Zustände auf bestimmte Zeitpunkte der Animation gesetzt werden
+                Diese werden dann nacheinander ausgeführt-->
                 <EasingDoubleKeyFrame KeyTime="00:00:01" Value="-61.5"/>
                 <EasingDoubleKeyFrame KeyTime="00:00:02" Value="-181"/>
                 <EasingDoubleKeyFrame KeyTime="00:00:03" Value="-69.891"/>
@@ -45,13 +48,20 @@
 
     <Canvas Background="Yellow" x:Name="Cvs_Main">
 
+        <!--Manuelle (Nicht-BLEND) Storyboards-->
+
         <Button Content="Klick mich"
                 Canvas.Left="100"
                 Canvas.Top="100">
             <Button.Triggers>
+                <!--Animationen können über EventTrigger gestartet werden-->
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
+                        <!--Storyboard-Objekte beinhalten die gleichzeitig auszuführenden Animationen-->
                         <Storyboard>
+                            <!--Für jeden zu verändernden Wert muss eine eigene Animation des jeweilgen 
+                            Dateintyp definiert werden. Hier muss angegeben werden, welche Property verändert
+                            werden, welcher neue Wert zugewiesen werden  und wie lange dies dauern soll-->
                             <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)"
                                              To="600"
                                              Duration="0:0:2.5"

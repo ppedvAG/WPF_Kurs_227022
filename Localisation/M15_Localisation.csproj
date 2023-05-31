@@ -5,6 +5,8 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <RootNamespace>Localisation</RootNamespace>
+    <AssemblyName>Localisation</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

@@ -7,8 +7,11 @@
         xmlns:local="clr-namespace:Localisation"
         mc:Ignorable="d"
         Title="MainWindow" Height="260" Width="344">
+
     <StackPanel>
-        <TextBlock Text="{x:Static loc:Strings.Tbl_String}"/>
+        <!--An resx-Dateien wird über die x:Static-Bindung angebunden. Die resx-Dateien müssen
+        auf public gesetzt werden, damit Xaml darauf zugreifen kann-->
         <Button Content="{x:Static loc:Strings.Btn_String}" Click="Button_Click"/>
+        <TextBlock Text="{x:Static loc:Strings.Tbl_String}"/>
     </StackPanel>
 </Window>

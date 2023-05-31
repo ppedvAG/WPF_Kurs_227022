@@ -28,7 +28,7 @@ namespace Animations
             InitAnimation();
             sb.Begin(this);
 
-            (this.Resources["Storyboard1"] as Storyboard).Begin();
+            (this.Resources["BlendStoryboard"] as Storyboard).Begin();
 
             Cvs_Main.Children.Add(new Line() { X1 = 0, X2 = 400, Y1 = 200, Y2 = 200, Stroke = new SolidColorBrush(Colors.Black) });
             Cvs_Main.Children.Add(new Line() { Y1 = 0, Y2 = 400, X1 = 200, X2 = 200, Stroke = new SolidColorBrush(Colors.Black) });
